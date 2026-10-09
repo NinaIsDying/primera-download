@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_browser_reload",
     "primera_download.apps.PrimeraDownloadConfig",
+    "primera-fprf.onrender.com"
 ]
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
