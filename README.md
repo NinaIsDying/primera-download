@@ -1,6 +1,6 @@
 # Primera
 
-Primera is a landing page for the Primera Android app, designed to introduce the pregnancy wellness experience and make it easy to download the APK.
+This is a landing page for the Primera Android app, designed to introduce the pregnancy wellness experience and make it easy to download the APK.
 
 The site includes a clean product-style hero section, navigation, feature highlights, and a QR download panel that points to the app download route.
 
