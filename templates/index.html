@@ -11,13 +11,13 @@
   <link rel="stylesheet" href="{% static 'css/site.css' %}">
 </head>
 <body>
-  <header class="topbar">
+  <header class="topbar header-dark">
     <a class="brand" href="#top" aria-label="Primera home">
       <img class="brand-mark" src="{% static 'assets/img-logo.png' %}" alt="">
       <img class="brand-wordmark" src="{% static 'assets/primera-wordmark.png' %}" alt="Primera">
     </a>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="#get-started">Get started</a>
+      <a href="#get-started">How to Install</a>
       <a href="#how-to">How to use</a>
       <a class="nav-download" href="{% url 'download_apk' %}">Download</a>
     </nav>
@@ -237,6 +237,18 @@
         updateActiveLinkFromScroll();
       });
     }, { passive: true });
+
+    const topbar = document.querySelector(".topbar");
+    function updateHeaderContrast() {
+      if (!topbar) return;
+      const threshold = Math.min(window.innerHeight * 0.18, 180);
+      const isLightBackground = window.scrollY > threshold;
+      topbar.classList.toggle("header-light", isLightBackground);
+      topbar.classList.toggle("header-dark", !isLightBackground);
+    }
+
+    updateHeaderContrast();
+    window.addEventListener("scroll", updateHeaderContrast, { passive: true });
 
     const initialLink = navTargets.find(({ link }) => link.hash === location.hash);
     if (initialLink) {
