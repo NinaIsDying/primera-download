@@ -1,0 +1,236 @@
+{% load static django_browser_reload %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F5F1FB">
+  <meta name="description" content="Get Primera, a thoughtful pregnancy support app for everyday wellbeing.">
+  <title>Primera</title>
+  <link rel="icon" href="{% static 'assets/img-logo.png' %}" type="image/png">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Primera home">
+      <img class="brand-mark" src="{% static 'assets/img-logo.png' %}" alt="">
+      <img class="brand-wordmark" src="{% static 'assets/primera-wordmark.png' %}" alt="Primera">
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#get-started">Get started</a>
+      <a href="#how-to">How to use</a>
+      <a class="nav-download" href="#download">Download</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="intro reveal" aria-labelledby="page-title">
+      <div class="intro-copy reveal reveal-delay-1">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Your pregnancy, supported</p>
+        <h1 id="page-title">Alagang maasahan ng bawat <span>ina.</span></h1>
+<p class="intro-text" style="text-align: justify;">Primera brings your health check-ins, daily wellness goals, and wearable insights into one app, so you can stay connected with your wellbeing throughout your pregnancy.</p>        <a class="primary-button" href="{% url 'download_apk' %}">
+          <span>Download Primera</span><span class="button-arrow" aria-hidden="true">></span>
+        </a>
+        <p class="device-note">For Android phones</p>
+      </div>
+
+      <div class="download-panel reveal reveal-delay-2" id="download" aria-labelledby="scan-title">
+        <div class="panel-heading">
+          <div>
+            <p class="panel-kicker">Take it with you</p>
+            <h2 id="scan-title">Scan to download</h2>
+          </div>
+        </div>
+        <a class="qr-link" href="{% url 'download_apk' %}" aria-label="Open the Primera APK download">
+          <img class="qr-image" src="{% url 'download_qr' %}" alt="QR code linking directly to the Primera Android app download">
+        </a>
+        <p class="qr-caption">Open your phone camera and point it at the code.</p>
+        <div class="panel-rule"></div>
+        <p class="version-line"><span class="status-dot"></span> Android app <span class="version-label">APK download</span></p>
+      </div>
+
+      <div class="orbit orbit-one" aria-hidden="true"></div>
+      <div class="orbit orbit-two" aria-hidden="true"></div>
+    </section>
+
+  <section class="install-section getting-started-section reveal" id="get-started" aria-labelledby="install-title">
+  <div class="section-heading reveal reveal-delay-1">
+    <p class="eyebrow">First time installing?</p>
+    <h2 id="install-title">Get started with Primera.</h2>
+  </div>
+
+  <ol class="steps">
+    <li class="step reveal reveal-delay-1">
+      <span class="step-number">01</span>
+      <div>
+        <h3>Download Primera</h3>
+        <p>Tap “Download Primera” to download the APK to your Android phone.</p>
+      </div>
+    </li>
+
+    <li class="step reveal reveal-delay-2">
+      <span class="step-number">02</span>
+      <div>
+        <h3>Install the app</h3>
+        <p>Open the downloaded APK and allow installation when prompted.</p>
+      </div>
+    </li>
+
+    <li class="step reveal reveal-delay-3">
+      <span class="step-number">03</span>
+      <div>
+        <h3>Set up Primera</h3>
+        <p>Open Primera and follow the on-screen instructions to create your account and complete your profile.</p>
+      </div>
+    </li>
+
+    <li class="step reveal reveal-delay-4">
+      <span class="step-number">04</span>
+      <div>
+        <h3>Connect your smartwatch</h3>
+        <p>Install OHealth, pair your compatible smartwatch, then allow Primera to access supported health data through Health Connect.</p>
+      </div>
+    </li>
+  </ol>
+
+  <p class="install-note reveal reveal-delay-2">
+    Primera is available for compatible Android devices. Smartwatch features require a compatible device, OHealth, and Health Connect.
+  </p>
+</section>
+
+<section class="install-section how-to-section reveal" id="how-to" aria-labelledby="getting-started-title">
+  <div class="section-heading reveal reveal-delay-1">
+    <p class="eyebrow">Make Primera yours</p>
+    <h2 id="getting-started-title">How to use Primera.</h2>
+  </div>
+
+  <ol class="steps">
+    <li class="step reveal reveal-delay-1">
+      <span class="step-number">01</span>
+      <div>
+        <h3>Complete your profile</h3>
+        <p>Enter the information requested by Primera to set up your account.</p>
+      </div>
+    </li>
+
+    <li class="step reveal reveal-delay-2">
+      <span class="step-number">02</span>
+      <div>
+        <h3>Connect your health data</h3>
+        <p>View supported information such as steps, sleep, heart rate, and blood oxygen when available from your connected device.</p>
+      </div>
+    </li>
+
+    <li class="step reveal reveal-delay-3">
+      <span class="step-number">03</span>
+      <div>
+        <h3>Complete health check-ins</h3>
+        <p>Record pregnancy-related information such as symptoms, medication, mood, and daily wellbeing. You can use voice input when available.</p>
+      </div>
+    </li>
+
+    <li class="step reveal reveal-delay-4">
+      <span class="step-number">04</span>
+      <div>
+        <h3>Track your goals</h3>
+        <p>Set wellness goals and monitor your progress through the app.</p>
+      </div>
+    </li>
+
+    <li class="step reveal reveal-delay-5">
+      <span class="step-number">05</span>
+      <div>
+        <h3>Explore your dashboard</h3>
+        <p>Review your health information, progress, and pregnancy-related resources in one place.</p>
+      </div>
+    </li>
+
+    <li class="step reveal reveal-delay-6">
+      <span class="step-number">06</span>
+      <div>
+        <h3>Review your health summary</h3>
+        <p>Use your recorded information and available summary features to help organize your health information for your records or healthcare provider.</p>
+      </div>
+    </li>
+  </ol>
+
+  <p class="install-note reveal reveal-delay-2">
+    Primera supports pregnancy self-monitoring and wellness tracking. It does not diagnose medical conditions or replace professional medical care.
+  </p>
+</section>
+
+  </main>
+
+  <script>
+    const navLinks = [...document.querySelectorAll(".site-nav a")];
+    const navTargets = navLinks
+      .map((link) => ({ link, target: document.querySelector(link.hash) }))
+      .filter(({ target }) => target);
+
+    function setActiveLink(activeLink) {
+      navLinks.forEach((link) => {
+        const isActive = link === activeLink;
+        link.classList.toggle("is-active", isActive);
+        if (isActive) {
+          link.setAttribute("aria-current", "location");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    }
+
+    function smoothScrollToTarget(target, link) {
+      if (!target) return;
+      const offset = target.getBoundingClientRect().top + window.scrollY - 72;
+      window.scrollTo({ top: offset, behavior: "smooth" });
+      setActiveLink(link);
+      history.replaceState(null, "", link.getAttribute("href"));
+    }
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const target = document.querySelector(link.hash);
+        if (target) {
+          event.preventDefault();
+          smoothScrollToTarget(target, link);
+        } else {
+          setActiveLink(link);
+        }
+      });
+    });
+
+    let scrollUpdatePending = false;
+    function updateActiveLinkFromScroll() {
+      scrollUpdatePending = false;
+      const passedTargets = navTargets
+        .map(({ link, target }) => ({ link, top: target.getBoundingClientRect().top }))
+        .filter(({ top }) => top <= 84)
+        .sort((first, second) => second.top - first.top);
+      if (passedTargets.length) setActiveLink(passedTargets[0].link);
+    }
+
+    const revealItems = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    window.addEventListener("scroll", () => {
+      if (scrollUpdatePending) return;
+      scrollUpdatePending = true;
+      requestAnimationFrame(updateActiveLinkFromScroll);
+    }, { passive: true });
+
+    const initialLink = navTargets.find(({ link }) => link.hash === location.hash);
+    if (initialLink) setActiveLink(initialLink.link);
+    else updateActiveLinkFromScroll();
+  </script>
+  {% django_browser_reload_script %}
+</body>
+</html>
