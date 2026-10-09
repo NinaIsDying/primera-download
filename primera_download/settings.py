@@ -7,7 +7,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "57cdebe7540a2b4987ebbaecb740de
 DEBUG = os.environ.get("DJANGO_DEBUG", "false").lower() == "true"
 ALLOWED_HOSTS = [
     host.strip()
-    for host in os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+    for host in os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1",    "primera-fprf.onrender.com").split(",")
     if host.strip()
 ]
 
@@ -21,7 +21,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_browser_reload",
     "primera_download.apps.PrimeraDownloadConfig",
-    "primera-fprf.onrender.com"
 ]
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
