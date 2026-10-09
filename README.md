@@ -21,3 +21,8 @@ py manage.py runserver
 ```
 
 Then open http://127.0.0.1:8000 in the browser.
+
+## Deployed Web Server
+
+Access the deployed server at https://primera-fprf.onrender.com/
+
