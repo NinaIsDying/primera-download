@@ -19,13 +19,13 @@
     <nav class="site-nav" aria-label="Main navigation">
       <a href="#get-started">Get started</a>
       <a href="#how-to">How to use</a>
-      <a class="nav-download" href="#download">Download</a>
+      <a class="nav-download" href="{% url 'download_apk' %}">Download</a>
     </nav>
   </header>
 
   <main id="top">
-    <section class="intro reveal" aria-labelledby="page-title">
-      <div class="intro-copy reveal reveal-delay-1">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
         <p class="eyebrow"><span class="eyebrow-dot"></span> Your pregnancy, supported</p>
         <h1 id="page-title">Alagang maasahan ng bawat <span>ina.</span></h1>
 <p class="intro-text" style="text-align: justify;">Primera brings your health check-ins, daily wellness goals, and wearable insights into one app, so you can stay connected with your wellbeing throughout your pregnancy.</p>        <a class="primary-button" href="{% url 'download_apk' %}">
@@ -34,7 +34,7 @@
         <p class="device-note">For Android phones</p>
       </div>
 
-      <div class="download-panel reveal reveal-delay-2" id="download" aria-labelledby="scan-title">
+      <div class="download-panel" id="download" aria-labelledby="scan-title">
         <div class="panel-heading">
           <div>
             <p class="panel-kicker">Take it with you</p>
@@ -53,14 +53,14 @@
       <div class="orbit orbit-two" aria-hidden="true"></div>
     </section>
 
-  <section class="install-section getting-started-section reveal" id="get-started" aria-labelledby="install-title">
-  <div class="section-heading reveal reveal-delay-1">
+  <section class="install-section getting-started-section reveal-section" id="get-started" aria-labelledby="install-title">
+  <div class="section-heading reveal-item reveal-delay-1">
     <p class="eyebrow">First time installing?</p>
     <h2 id="install-title">Get started with Primera.</h2>
   </div>
 
   <ol class="steps">
-    <li class="step reveal reveal-delay-1">
+    <li class="step reveal-item reveal-delay-1">
       <span class="step-number">01</span>
       <div>
         <h3>Download Primera</h3>
@@ -68,7 +68,7 @@
       </div>
     </li>
 
-    <li class="step reveal reveal-delay-2">
+    <li class="step reveal-item reveal-delay-2">
       <span class="step-number">02</span>
       <div>
         <h3>Install the app</h3>
@@ -76,7 +76,7 @@
       </div>
     </li>
 
-    <li class="step reveal reveal-delay-3">
+    <li class="step reveal-item reveal-delay-3">
       <span class="step-number">03</span>
       <div>
         <h3>Set up Primera</h3>
@@ -84,7 +84,7 @@
       </div>
     </li>
 
-    <li class="step reveal reveal-delay-4">
+    <li class="step reveal-item reveal-delay-4">
       <span class="step-number">04</span>
       <div>
         <h3>Connect your smartwatch</h3>
@@ -93,19 +93,19 @@
     </li>
   </ol>
 
-  <p class="install-note reveal reveal-delay-2">
+  <p class="install-note reveal-item reveal-delay-2">
     Primera is available for compatible Android devices. Smartwatch features require a compatible device, OHealth, and Health Connect.
   </p>
 </section>
 
-<section class="install-section how-to-section reveal" id="how-to" aria-labelledby="getting-started-title">
-  <div class="section-heading reveal reveal-delay-1">
+<section class="install-section how-to-section reveal-section" id="how-to" aria-labelledby="getting-started-title">
+  <div class="section-heading reveal-item reveal-delay-1">
     <p class="eyebrow">Make Primera yours</p>
     <h2 id="getting-started-title">How to use Primera.</h2>
   </div>
 
   <ol class="steps">
-    <li class="step reveal reveal-delay-1">
+    <li class="step reveal-item reveal-delay-1">
       <span class="step-number">01</span>
       <div>
         <h3>Complete your profile</h3>
@@ -113,7 +113,7 @@
       </div>
     </li>
 
-    <li class="step reveal reveal-delay-2">
+    <li class="step reveal-item reveal-delay-2">
       <span class="step-number">02</span>
       <div>
         <h3>Connect your health data</h3>
@@ -121,7 +121,7 @@
       </div>
     </li>
 
-    <li class="step reveal reveal-delay-3">
+    <li class="step reveal-item reveal-delay-3">
       <span class="step-number">03</span>
       <div>
         <h3>Complete health check-ins</h3>
@@ -129,7 +129,7 @@
       </div>
     </li>
 
-    <li class="step reveal reveal-delay-4">
+    <li class="step reveal-item reveal-delay-4">
       <span class="step-number">04</span>
       <div>
         <h3>Track your goals</h3>
@@ -137,7 +137,7 @@
       </div>
     </li>
 
-    <li class="step reveal reveal-delay-5">
+    <li class="step reveal-item reveal-delay-5">
       <span class="step-number">05</span>
       <div>
         <h3>Explore your dashboard</h3>
@@ -145,7 +145,7 @@
       </div>
     </li>
 
-    <li class="step reveal reveal-delay-6">
+    <li class="step reveal-item reveal-delay-6">
       <span class="step-number">06</span>
       <div>
         <h3>Review your health summary</h3>
@@ -154,7 +154,7 @@
     </li>
   </ol>
 
-  <p class="install-note reveal reveal-delay-2">
+  <p class="install-note reveal-item reveal-delay-2">
     Primera supports pregnancy self-monitoring and wellness tracking. It does not diagnose medical conditions or replace professional medical care.
   </p>
 </section>
@@ -164,7 +164,10 @@
   <script>
     const navLinks = [...document.querySelectorAll(".site-nav a")];
     const navTargets = navLinks
-      .map((link) => ({ link, target: document.querySelector(link.hash) }))
+      .map((link) => ({
+        link,
+        target: link.hash ? document.querySelector(link.hash) : null,
+      }))
       .filter(({ target }) => target);
 
     function setActiveLink(activeLink) {
@@ -189,6 +192,7 @@
 
     navLinks.forEach((link) => {
       link.addEventListener("click", (event) => {
+        if (!link.hash) return;
         const target = document.querySelector(link.hash);
         if (target) {
           event.preventDefault();
@@ -209,27 +213,37 @@
       if (passedTargets.length) setActiveLink(passedTargets[0].link);
     }
 
-    const revealItems = document.querySelectorAll(".reveal");
+    const revealSections = document.querySelectorAll(".reveal-section");
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          entry.target.classList.add("is-visible");
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+    }, {
+      threshold: 0.15,
+      rootMargin: "0px 0px -8% 0px",
+    });
 
-    revealItems.forEach((item) => revealObserver.observe(item));
+    revealSections.forEach((section) => {
+      revealObserver.observe(section);
+    });
 
     window.addEventListener("scroll", () => {
       if (scrollUpdatePending) return;
       scrollUpdatePending = true;
-      requestAnimationFrame(updateActiveLinkFromScroll);
+      requestAnimationFrame(() => {
+        updateActiveLinkFromScroll();
+      });
     }, { passive: true });
 
     const initialLink = navTargets.find(({ link }) => link.hash === location.hash);
-    if (initialLink) setActiveLink(initialLink.link);
-    else updateActiveLinkFromScroll();
+    if (initialLink) {
+      setActiveLink(initialLink.link);
+    } else {
+      updateActiveLinkFromScroll();
+    }
   </script>
   {% django_browser_reload_script %}
 </body>

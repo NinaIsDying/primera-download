@@ -50,13 +50,32 @@
 
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 
-.reveal {
+.reveal-section {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s var(--transition), transform 0.7s var(--transition);
+  visibility: hidden;
+  transform: translateY(42px);
+  transition:
+    opacity 900ms var(--transition),
+    transform 900ms var(--transition),
+    visibility 0s linear 900ms;
 }
 
-.reveal.visible {
+.reveal-section.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0ms;
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 700ms var(--transition),
+    transform 700ms var(--transition);
+}
+
+.reveal-section.is-visible .reveal-item {
   opacity: 1;
   transform: translateY(0);
 }
@@ -396,4 +415,49 @@ h1 span { color: var(--purple); }
   .site-nav { gap: 5px; }
   .site-nav a { font-size: 9px; }
   .site-nav .nav-download { padding-inline: 7px; }
+}
+
+.reveal-section .reveal-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 900ms ease,
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-section.is-visible .reveal-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-section .reveal-delay-1 {
+  transition-delay: 0ms;
+}
+
+.reveal-section .reveal-delay-2 {
+  transition-delay: 100ms;
+}
+
+.reveal-section .reveal-delay-3 {
+  transition-delay: 200ms;
+}
+
+.reveal-section .reveal-delay-4 {
+  transition-delay: 300ms;
+}
+
+.reveal-section .reveal-delay-5 {
+  transition-delay: 400ms;
+}
+
+.reveal-section .reveal-delay-6 {
+  transition-delay: 500ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section .reveal-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

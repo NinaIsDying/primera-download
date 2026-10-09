@@ -3,8 +3,8 @@ from pathlib import Path
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "development-only-change-before-deploying")
-DEBUG = os.environ.get("DJANGO_DEBUG", "false").lower() == "false"
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "57cdebe7540a2b4987ebbaecb740decd")
+DEBUG = os.environ.get("DJANGO_DEBUG", "false").lower() == "true"
 ALLOWED_HOSTS = [
     host.strip()
     for host in os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
@@ -19,6 +19,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.middleware.common.CommonMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -38,6 +39,6 @@ ASGI_APPLICATION = "primera_download.asgi.application"
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [BASE_DIR / "static"]
-APK_PATH = Path(os.environ.get("PRIMERA_APK_PATH", BASE_DIR / "downloads" / "primera.apk"))
+APK_PATH = Path(os.environ.get("PRIMERA_APK_PATH", BASE_DIR / "downloads" / "Primera-Test.apk"))
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
