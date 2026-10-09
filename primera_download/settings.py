@@ -11,6 +11,12 @@ ALLOWED_HOSTS = [
     if host.strip()
 ]
 
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
 INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_browser_reload",
